@@ -1,41 +1,16 @@
-<html lang="en">
+<div
+  class="container d-flex flex-column justify-content-center gap-3 p-3 col-6"
+>
+ 
+  <app-pio-message
+    *ngFor="let item of pios"
+    class="message border p-3"
+    [item]="item"
+  ></app-pio-message>
+  
+</div>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pio</title>
-</head>
 
-<body>
-  <article class="col-md-12">
-    <!-- Modern - Bootstrap Cards -->
-    <header>
-      <h2>Modern - Bootstrap 4 Cards</h2>
-    </header>
-    <!-- BLOG CARDS -->
-    <h2>Blog Cards</h2>
-    <div *ngFor="let item of pios">
-
-      <div class="card">
-        <div class="table table-info">
-          <h4 class="card-caption">
-            <p>{{item.text}}</p>
-          </h4>
-          <div class="ftr">
-            <div class="author">
-              <img src="http://adamthemes.com/demo/code/cards/images/avatar3.png" alt="" class="avatar img-raised">
-              <span>{{item.username}}</span>
-            </div>
-            <div class="stats"> <i class="fa fa-heart"></i> 365 &nbsp; <i class="fa fa-share-alt"></i> 120 </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-    <div class="bottom-page">
-      <button type="button" class="pio-button">Pio</button>
-    </div>
-  </article>
-</body>
-
-</html>
+<button mat-fab class="pio-button rounded-circle">
+  <mat-icon>create</mat-icon>
+</button>

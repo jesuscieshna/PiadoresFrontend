@@ -1,0 +1,22 @@
+<div class="author d-flex gap-3 text-center align-items-center">
+  <div class="avatar">
+    <img
+      src="https://static01.nytimes.com/newsgraphics/2022-12-07-disinfo-china-bots/a04adf53b2e5fcd6799eb5442c2bab971db7d6c4/_assets/LoriEvers7.png"
+      alt=""
+      class="rounded-circle"
+      width="50"
+      height="50"
+    />
+  </div>
+  <div class="username">
+    <span>{{ item.username }}</span>
+  </div>
+</div>
+<div class="content pt-4 pb-4">
+  <span class="text px-2">{{ item.text }}</span>
+</div>
+<div class="likebutton d-flex justify-content-end ">
+  <i class="bi" (click)="likeButton()" 
+  [ngClass]="isLiked ? 'bi-heart-fill red' : 'bi-heart'"
+  ></i>
+</div>
