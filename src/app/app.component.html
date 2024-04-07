@@ -1,13 +1,14 @@
 <div
   class="container d-flex flex-column justify-content-center gap-3 p-3 col-6"
 >
- 
+
   <app-pio-message
+    (dataEvent)="filterByUsername($event)"
     *ngFor="let item of pios"
     class="message border p-3"
     [item]="item"
   ></app-pio-message>
-  
+
 </div>
 
 

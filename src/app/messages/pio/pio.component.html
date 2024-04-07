@@ -9,14 +9,14 @@
     />
   </div>
   <div class="username">
-    <span>{{ item.username }}</span>
+    <span (click)="sendDataToParent(item.usuario.nombreUsuario)">{{ item.usuario.nombreUsuario }}</span>
   </div>
 </div>
 <div class="content pt-4 pb-4">
-  <span class="text px-2">{{ item.text }}</span>
+  <span class="text px-2">{{ item.campo }}</span>
 </div>
 <div class="likebutton d-flex justify-content-end ">
-  <i class="bi" (click)="likeButton()" 
-  [ngClass]="isLiked ? 'bi-heart-fill red' : 'bi-heart'"
+  <i class="bi" (click)="likeButton()"
+  [ngClass]="item.likes ? 'bi-heart-fill red' : 'bi-heart'"
   ></i>
 </div>

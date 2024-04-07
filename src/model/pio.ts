@@ -1,12 +1,16 @@
+import { Usuario } from "./usuario";
+
 export class Pio
 {
-  public username: String;
-  public text: String;
-  public liked: boolean;
+  public id: number
+  public usuario: Usuario;
+  public campo: String;
+  public likes: boolean;
 
-  constructor(username :String, text: String, liked: boolean){
-    this.username=username;
-    this.text=text;
-    this.liked=liked;
+  constructor(id :number, usuario :Usuario, campo: String, likes: boolean){
+    this.id=id;
+    this.usuario=usuario;
+    this.campo=campo;
+    this.likes=likes;
   }
 }

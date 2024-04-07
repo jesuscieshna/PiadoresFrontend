@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { PioComponent } from './messages/pio/pio.component';
 import {MatIconModule} from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { MensajeServiceService } from './service/mensaje-service.service';
 
 @Component({
   selector: 'app-root',
@@ -16,5 +17,21 @@ import { MatButtonModule } from '@angular/material/button';
 export class AppComponent {
 
   title = 'PiadoresFrontend';
-  pios: Pio[] = [{username:"Antoñito",text:"Hola buenassss",liked:false},{username:"Pepe",text:"illo",liked:false}];
+  pios: Pio[] = [];
+
+  constructor(private mensajesService: MensajeServiceService) {  }
+
+  filterByUsername(username: string) {
+    this.mensajesService.getAllByUsername(username).subscribe((pio:Pio[])=>{
+      this.pios=pio;
+      console.log(pio);
+    })
+  }
+
+  ngOnInit(): void {
+    this.mensajesService.getAll().subscribe((pio:Pio[])=>{
+      this.pios=pio;
+      console.log(pio);
+    })
+  }
 }

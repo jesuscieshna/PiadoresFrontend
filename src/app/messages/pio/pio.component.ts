@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Pio } from '../../../model/pio';
 import { CommonModule } from '@angular/common';
 
@@ -12,10 +12,15 @@ import { CommonModule } from '@angular/common';
 export class PioComponent {
   @Input()
   item!: Pio;
-  isLiked = false;
+
+  @Output() dataEvent = new EventEmitter<string>();
+
+  sendDataToParent(userName:string) {
+    this.dataEvent.emit(userName);
+  }
 
   likeButton() {
-    this.isLiked = !this.isLiked;
+    this.item.likes=!this.item.likes;
   }
 
 }

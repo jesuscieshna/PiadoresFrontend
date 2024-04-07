@@ -1,10 +1,10 @@
 export class Usuario
 {
-  public nombre: String;
+  public nombreUsuario: string;
   public email: String;
 
-  constructor(nombre: String, email:String){
-    this.nombre=nombre;
+  constructor(nombre: string, email:String){
+    this.nombreUsuario=nombre;
     this.email=email;
   }
 }
