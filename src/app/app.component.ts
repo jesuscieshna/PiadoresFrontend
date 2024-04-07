@@ -12,5 +12,5 @@ import { CommonModule } from '@angular/common';
 })
 export class AppComponent {
   title = 'PiadoresFrontend';
-  pios: Pio[] = [{username:"Antoñito",text:"Hola buenassss"},{username:"Pepe",text:"illo"}];
+  pios: Pio[] = [{username:"Antoñito",text:"Hola buenassss",liked:false},{username:"Pepe",text:"illo",liked:false}];
 }
