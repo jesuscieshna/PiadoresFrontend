@@ -3,7 +3,8 @@
 >
 
   <app-pio-message
-    (dataEvent)="filterByUsername($event)"
+    (userNameEmit)="filterByUsername($event)"
+    (likedMessageEmitter)="likeMessage($event)"
     *ngFor="let item of pios"
     class="message border p-3"
     [item]="item"
@@ -12,6 +13,6 @@
 </div>
 
 
-<button mat-fab class="pio-button rounded-circle">
+<button mat-fab class="pio-button rounded-circle" (click)="postPio()">
   <mat-icon>create</mat-icon>
 </button>

@@ -14,15 +14,21 @@ export class MensajeServiceService {
 
   constructor(private http:HttpClient) { }
 
+  updateMensajeLike(pio: Pio){
+    return this.http.put('http://localhost:8080/api/mensajes/likechange', pio, this.options);
+  }
+
   postMensaje(pio : Pio){
-    return false;
+    return this.http.post('http://localhost:8080/api/mensajes/nuevo', pio, this.options);
   }
 
   getAll(){
-    return this.http.get<Pio[]>('http://localhost:8080/api/mensajes/listar',this.options);
+    return this.http.get<Pio[]>('http://localhost:8080/api/mensajes/todos',this.options);
   }
 
   getAllByUsername(username: String){
     return this.http.get<Pio[]>(`http://localhost:8080/api/mensajes/byusuario/${username}`,this.options);
   }
+
+
 }

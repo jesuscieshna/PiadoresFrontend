@@ -13,14 +13,17 @@ export class PioComponent {
   @Input()
   item!: Pio;
 
-  @Output() dataEvent = new EventEmitter<string>();
+  @Output() userNameEmit = new EventEmitter<string>();
+  @Output() likedMessageEmitter = new EventEmitter<Pio>();
 
-  sendDataToParent(userName:string) {
-    this.dataEvent.emit(userName);
+  userNameClicked(userName:string) {
+    this.userNameEmit.emit(userName);
   }
 
-  likeButton() {
+  messageLikeClicked(message: Pio){
     this.item.likes=!this.item.likes;
+    console.log(this.item.likes);
+    this.likedMessageEmitter.emit(this.item);
   }
 
 }
