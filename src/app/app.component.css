@@ -1,5 +1,5 @@
 .pio-button{
-    position: absolute;
+    position: fixed;
     right: 4%;
     bottom: 5%;
     background: #009bcf;
@@ -11,9 +11,9 @@
 .message{
     border-radius: 10px;
     transition-duration: .3s;
+
 }.message:hover{
     background-color: #f0f0f0;
-
 }
 
 .avatar{

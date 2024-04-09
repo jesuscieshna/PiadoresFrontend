@@ -1,0 +1,26 @@
+<h2 mat-dialog-title>Nuevo Pio</h2>
+<mat-dialog-content>
+  <mat-form-field class="w-100 d-flex justify-content-between">
+    <label>Username</label>
+    <input matInput maxlength="16" [(ngModel)]="data.username" />
+  </mat-form-field>
+  <mat-form-field class="w-100 d-flex justify-content-between">
+    <label>Email</label>
+    <input matInput maxlength="25" [(ngModel)]="data.email" />
+  </mat-form-field>
+  <mat-form-field class="w-100 d-flex justify-content-center">
+    <label>¿En qué piensas?</label>
+    <input matInput maxlength="200" [(ngModel)]="data.message" />
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions class="d-flex justify-content-between">
+  <button mat-flat-button color="warn" (click)="onNoClick()">Cancelar</button>
+  <button
+    mat-flat-button
+    color="primary"
+    [mat-dialog-close]="data"
+    cdkFocusInitial
+  >
+    Publicar
+  </button>
+</mat-dialog-actions>

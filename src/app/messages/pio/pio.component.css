@@ -5,3 +5,17 @@
 .red{
     color: red;
 }
+
+.content{
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #f0f0f0;
+    margin: 10px;
+
+}
+
+.text{
+    text-wrap: break-word;
+    word-wrap: break-word;
+    color: rgb(0, 0, 0);
+}
