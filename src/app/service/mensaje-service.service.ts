@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class MensajeServiceService {
+export class Mensajero {
   private options={
     headers:{
       'Content-Type':'application/json'
